@@ -1,0 +1,13 @@
+----------------------------------------------------------------
+Sat Apr 22 08:23:17 PDT 2023:
+Booting Derby version The Apache Software Foundation - Apache Derby - 10.14.2.0 - (1828579): instance a816c00e-0187-a98f-f6c8-0000115b83d8 
+on database directory /home/cloudera/workspace/NbaTitlePrediction/metastore_db with class loader org.apache.spark.sql.hive.client.IsolatedClientLoader$$anon$1@64757d56 
+Loaded from file:/home/cloudera/.m2/repository/org/apache/derby/derby/10.14.2.0/derby-10.14.2.0.jar
+java.vendor=Oracle Corporation
+java.runtime.version=1.8.0_181-b13
+user.dir=/home/cloudera/workspace/NbaTitlePrediction
+os.name=Linux
+os.arch=amd64
+os.version=2.6.32-573.el6.x86_64
+derby.system.home=null
+Database Class Loader started - derby.database.classpath=''
