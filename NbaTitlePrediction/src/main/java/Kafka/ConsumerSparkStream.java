@@ -22,7 +22,7 @@ public class ConsumerSparkStream {
 	public static void main(String[] args) throws Exception {
     	
     	HBaseTableCreator dbHbase = HBaseTableCreator.getDB();
-		dbHbase.createHiveTable();
+		dbHbase.createHbaseTable();
 		
     	 String KAFKA_BROKERS = KafkaConfig.KAFKA_BROKERS;
          String TOPIC_NAME = KafkaConfig.TOPIC_NAME;

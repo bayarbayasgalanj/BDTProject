@@ -22,10 +22,7 @@ import org.apache.spark.sql.Dataset;
 import org.apache.spark.sql.Row;
 import org.apache.spark.sql.SaveMode;
 import org.apache.spark.sql.SparkSession;
-
 import Data.TeamInfo;
-
-//import DataModel.TeamInfo;
 import HBaseCon.ConnectorToHBase;
 
 public class HiveTableCreator {
@@ -34,7 +31,6 @@ public class HiveTableCreator {
 	private static SparkSession mySparkSession;
 	private static final String CF_NAME = "cf";
 	private static final String CF_ROW_KEY = "Row Key";
-	
     public static void main(String[] args) throws IOException{
     	 Configuration config = HBaseConfiguration.create();
          try (Connection connection = ConnectionFactory.createConnection(config);
@@ -43,7 +39,6 @@ public class HiveTableCreator {
              Scan scan = new Scan();
              scan.addColumn(Bytes.toBytes(CF_ROW_KEY), Bytes.toBytes("rowkeyTeamId"));
              ResultScanner scanner = hTable.getScanner(scan);
-         
 			String keyValue = "";
 			char separaterChar = '/';
 			List<TeamInfo> teamInfoList = new ArrayList<>();
@@ -54,7 +49,6 @@ public class HiveTableCreator {
 				teamInfoList.add(perMatchInfoRecord);
 				System.out.println(perMatchInfoRecord.toString());
 			}
-			
 			mySparkSession = SparkSession.builder()
 				    .appName("HiveTableCreator")
 				    .master("local[*]")
