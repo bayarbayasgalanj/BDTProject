@@ -18,7 +18,7 @@ public class MainKafka {
 		// Sending data to the Kafka Cluster
 		try {			
 			DataProduce.sendingData(standingData);
-			System.out.println("Data Successfully sending TO KAFKA");
+			System.out.println("_________________Data Successfully sending TO KAFKA_________________");
 		} catch (ExecutionException e) {
 			System.out.println("Kafka sending ERROR:"+e.getMessage());
 		}

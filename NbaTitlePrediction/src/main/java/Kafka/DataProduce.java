@@ -37,10 +37,10 @@ public class DataProduce {
 		//sending the data to Kafka Cluster
 		for (String record : standingData) {
 			System.out.println("RECORD"+record);
-			ProducerRecord<Long, String> matchRecords = new ProducerRecord<>(
+			ProducerRecord<Long, String> teamRecords = new ProducerRecord<>(
 					KafkaConfig.TOPIC_NAME, record);
-			System.out.println("matchRecords"+matchRecords);
-			myProducer.send(matchRecords).get();
+			System.out.println("matchRecords"+teamRecords);
+			myProducer.send(teamRecords).get();
 		}
 	}
 }

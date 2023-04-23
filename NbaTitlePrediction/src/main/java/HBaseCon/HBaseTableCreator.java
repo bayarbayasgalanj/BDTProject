@@ -1,6 +1,7 @@
 package HBaseCon;
 
 import org.apache.hadoop.conf.Configuration;
+
 import org.apache.hadoop.hbase.HBaseConfiguration;
 import org.apache.hadoop.hbase.TableExistsException;
 import org.apache.hadoop.hbase.TableName;
@@ -11,21 +12,18 @@ import org.apache.hadoop.hbase.client.Connection;
 import org.apache.hadoop.hbase.client.ConnectionFactory;
 import org.apache.hadoop.hbase.client.TableDescriptor;
 import org.apache.hadoop.hbase.client.TableDescriptorBuilder;
-import org.apache.hadoop.hbase.mapreduce.TableOutputFormat;
 import org.apache.hadoop.hbase.util.Bytes;
 import org.apache.hadoop.hbase.client.Put;
 import org.apache.hadoop.hbase.client.Table;
-import org.apache.hadoop.mapreduce.Job;
-import org.apache.spark.api.java.JavaRDD;
 
 import Data.NbaDataApi;
-import Data.TeamInfo;
 
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
-
-public class HBaseTableCreator {
+import java.io.Serializable;
+public class HBaseTableCreator  implements Serializable{
+	private static final long serialVersionUID = 1L;
     private static final String TABLE_NAME = "NBAteamInfo";
     private static final String CF_ROW_KEY = "Row Key";
     private static final String CF_NAME = "cf";
@@ -116,13 +114,5 @@ public class HBaseTableCreator {
         }
         table.put(puts);
     }
- // insert data into HBase
- 	public void insertMatchDataIntoHBase(Configuration config, JavaRDD<TeamInfo> perMatchRecord) throws IOException {
- 		Job mrJob = Job.getInstance(config);
- 		mrJob.getConfiguration().set(TableOutputFormat.OUTPUT_TABLE, TABLE_NAME);
- 		mrJob.setOutputFormatClass(TableOutputFormat.class);
-// 		JavaPairRDD<ImmutableBytesWritable, Put> hbasePuts = perMatchRecord.mapToPair(new MyPair());
-// 		hbasePuts.saveAsNewAPIHadoopDataset(mrJob.getConfiguration());
- 	}
 }
 
