@@ -5,7 +5,7 @@
 - tar -xzf kafka_2.13-3.4.0.tgz 
 
 - sudo useradd kafka
-- sudo mv kafka_2.13-3.4.0 /usr/local/kafka
+- sudo mv kafka_2.13-3.4.0 /var/lib/kafka
 - sudo chown -R kafka:kafka /var/lib/kafka
 
 - sudo su kafka
