@@ -12,4 +12,5 @@
 - cd /usr/lib/kafka
 - ./bin/kafka-server-start.sh config/server.properties
 
-<img width="301" alt="Screen Shot 2023-04-22 at 16 49 37" src="https://user-images.githubusercontent.com/18479401/233808016-e5c317ee-2cdc-4631-b7b6-8488dbe12394.png">
+<img width="292" alt="Screen Shot 2023-04-23 at 15 03 57" src="https://user-images.githubusercontent.com/18479401/233862987-3e77b2a2-19d7-4ec4-ba81-9c2b708be735.png">
+
